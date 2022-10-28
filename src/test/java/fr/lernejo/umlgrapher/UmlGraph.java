@@ -1,7 +1,5 @@
 package fr.lernejo.umlgrapher;
 
-import fr.lernejo.UmlGraphTests;
-
 public class UmlGraph {
     private final Class<?>[] classgraph;
     public UmlGraph(Class<?>...classgraph) {
@@ -10,15 +8,21 @@ public class UmlGraph {
     }
 
     public String as(GraphType typegraph) {
-        for (Class diagraclasse : classgraph){
-            if (typegraph ==GraphType.Mermaid){
-                return """
-                    classDiagram
-                    class Machin {
-                        <<interface>>
-                    }                   
-                    """;
+        if (typegraph == GraphType.Mermaid) {
+            String graph = "cdiagraclass";
+
+            for (Class diagraclasse : classgraph) {
+                if (typegraph == GraphType.Mermaid) {
+                    return """
+                        classDiagram
+                        class Machin {
+                            <<interface>>
+                        }                   
+                        """;
+                }
+
             }
+            return graph;
         }
         return "";
     }
