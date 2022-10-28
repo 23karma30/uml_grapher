@@ -7,9 +7,20 @@ public class UmlGraph {
 
     }
 
+      /*
+    private final Set<UmlType> types = new TreeSet<>(Comparator
+        .<UmlType, String>comparing(t->t.name())
+        .thenComparing(t->t.packageName()));
+
+    private final Set<MermaidLink> types = new TreeSet<>(Comparator
+        .<UmlType, String>comparing(t->t.name())
+        .thenComparing(t->t.packageName()));
+
+    */
+
     public String as(GraphType typegraph) {
         if (typegraph == GraphType.Mermaid) {
-            String graph = "cdiagraclass";
+            String graph = "diagraclass";
 
             for (Class diagraclasse : classgraph) {
                 if (typegraph == GraphType.Mermaid) {
