@@ -10,14 +10,14 @@ public class UmlGraph {
     }
 
     public String as(GraphType typegraph) {
-        for (Class classeDiagram : classgraph){
+        for (Class diagraclasse : classgraph){
             if (typegraph ==GraphType.Mermaid){
                 return """
-                classDiagram
-                class"+classeDiagram.getSimpleName() +"{
-                  <<interface>>
-                }
-                """;
+                    classDiagram
+                    class Machin {
+                        <<interface>>
+                    }                   
+                    """;
             }
         }
         return "";
